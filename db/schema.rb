@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131221045157) do
+ActiveRecord::Schema.define(version: 20131221050157) do
 
   create_table "stories", force: true do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131221045157) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "tasks", force: true do |t|
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 20131221045157) do
     t.datetime "updated_at"
     t.string   "status"
     t.integer  "story_id",    default: 1
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|
