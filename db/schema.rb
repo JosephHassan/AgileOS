@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20131221022741) do
 
   create_table "stories", force: true do |t|
-    t.string   "Title"
-    t.text     "Description"
-    t.string   "Status"
+    t.string   "title"
+    t.text     "description"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

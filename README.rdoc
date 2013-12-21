@@ -5,7 +5,17 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* versions
+	Ruby version              2.0.0 (x86_64-darwin13.0.0)
+	RubyGems version          2.1.11
+	Rack version              1.5
+	Rails version             4.0.2
+	JavaScript Runtime        JavaScriptCore
+	Active Record version     4.0.2
+	Action Pack version       4.0.2
+	Action Mailer version     4.0.2
+	Active Support version    4.0.2
+	Database adapter          sqlite3
 
 * System dependencies
 

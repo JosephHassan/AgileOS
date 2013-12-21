@@ -15,9 +15,9 @@
   <tbody>
     <% @stories.each do |story| %>
       <tr>
-        <td><%= story.Title %></td>
-        <td><%= story.Description %></td>
-        <td><%= story.Status %></td>
+        <td><%= story.title %></td>
+        <td><%= story.description %></td>
+        <td><%= story.status %></td>
         <td><%= link_to 'Show', story %></td>
         <td><%= link_to 'Edit', edit_story_path(story) %></td>
         <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
