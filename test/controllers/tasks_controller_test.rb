@@ -4,6 +4,7 @@ class TasksControllerTest < ActionController::TestCase
   setup do
     @task = tasks(:one)
     @story = stories(:two)
+    @task.story_id = Story.find(:first)
   end
 
   test "should get index" do
@@ -18,12 +19,6 @@ class TasksControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "Should not be able to directly access new task form - post" do
-    session[:story_id] = nil
-    assert_redirected_to stories_path do
-      post :create, task: { description: @task.description, due_date: @task.due_date, title: @task.title, story_id: @task.story_id }
-    end
-  end
   
   test "Should not get the new task form without context of a story" do
     session[:story_id] = nil
@@ -33,11 +28,11 @@ class TasksControllerTest < ActionController::TestCase
 
   test "should create task" do
     assert_difference('Task.count') do
-      session[:session_id] = @story.id
+
       post :create, task: { description: @task.description, due_date: @task.due_date, title: @task.title, story_id: @task.story_id }
     end
 
-    assert_redirected_to task_path(assigns(:task))
+    assert_redirected_to story_path()#task_path(assigns(:task))
   end
 
   test "should show task" do

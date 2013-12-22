@@ -28,6 +28,11 @@
           <%= f.label :user_id, "Assign To" %><br />
           <%= collection_select(:story, :user_id, User.all, :id, :full_name, prompt: true) %>
       </div>
+      <div class="field">
+          <%= f.label :estimate, "Story Size" %><br/>
+          <%= f.select :estimate, Story::FIBONACCI_SEQUENCE, prompt: true%><br/>
+      </div>
+      
       <div class="actions">
         <%= f.submit %>
       </div>

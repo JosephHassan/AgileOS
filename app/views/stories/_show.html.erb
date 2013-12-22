@@ -6,6 +6,7 @@
     </p>
     
     <aside class="story_stats">
+        Story Size: <%= @story.estimate %><br />
         Assigned to: <%= @story.user.full_name if @story.user != nil %><br />
         Last update: <%= @story.updated_at%>
     </aside>
