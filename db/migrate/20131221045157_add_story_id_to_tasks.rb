@@ -1,5 +1,5 @@
 class AddStoryIdToTasks < ActiveRecord::Migration
   def change
-    add_column :tasks, :story_id, :integer, default: 1
+    add_column :tasks, :story_id, :integer
   end
 end
