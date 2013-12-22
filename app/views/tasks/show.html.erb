@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @task.title %>
-</p>
+<h1 class="form_header">
+  Task #<%= @task.id%> - <%= @task.title %>
+</h1>
 
 <p>
   <strong>Description:</strong>
@@ -16,4 +15,8 @@
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Back to story', story_path(@task.story) %>
+
+<h2 class="form_header"> This task belongs to the following story </h2>
+<hr />
+<%= render "stories/show"%>

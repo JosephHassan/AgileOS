@@ -24,7 +24,7 @@
       <tr>
         <td class="td"></td>
         <td class="td"><%= story.user.full_name if story.user != nil %></td>
-        <td class="td"><%= link_to "#{story.id} | #{story.title}", story %></td>
+        <td class="td"><%= link_to "Story \##{story.id} - #{story.title}", story %></td>
         <td class="td"><%= story.status %></td>
         
         <td class="td"><%= link_to image_tag("Edit-icon.png"), edit_story_path(story) %></td>
