@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title , size: 40%>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description , cols: 38, rows: 6%>
   </div>
   <div class="field">
     <%= f.label :due_date %><br>
-    <%= f.text_field :due_date %>
+    <%= f.date_select :due_date, include_blank: true, start_year: Date.today.year %>
   </div>
   <div class="field">
       <%= f.label :status%><br />

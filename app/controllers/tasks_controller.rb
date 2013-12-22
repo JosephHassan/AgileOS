@@ -1,3 +1,4 @@
+
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   #before_action :get_story_id
@@ -70,6 +71,7 @@ class TasksController < ApplicationController
     end
   end
 
+   
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
@@ -85,4 +87,5 @@ class TasksController < ApplicationController
     def get_story_id
       return session[:story_id]
     end
+    
 end
