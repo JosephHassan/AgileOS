@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20131221050157) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
-    t.integer  "story_id",    default: 1
+    t.integer  "story_id"
     t.integer  "user_id"
   end
 

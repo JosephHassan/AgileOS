@@ -29,7 +29,10 @@
   </div>
   <div class="field">
       <%= f.label :user_id, "Assign To:"%><br />
-      <%= collection_select :task, :user_id, User.all, :id, :full_name%>
+      <%= collection_select :task, :user_id, User.all, :id, :full_name, prompt: true %>
+  </div>
+  <div class="field">
+      <%= f.hidden_field :story_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

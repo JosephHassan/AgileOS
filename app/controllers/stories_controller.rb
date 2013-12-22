@@ -7,12 +7,14 @@ class StoriesController < ApplicationController
   # GET /stories.json
   def index
     @stories = Story.all
+    session[:story_id] = nil
   end
 
   # GET /stories/1
   # GET /stories/1.json
   def show
     @tasks = @story.tasks.all
+    session[:story_id] = @story.id
   end
 
   # GET /stories/new
@@ -75,5 +77,6 @@ class StoriesController < ApplicationController
       params.require(:story).permit(:title, :description, :status, :user_id)
     end
     
+
 
 end
