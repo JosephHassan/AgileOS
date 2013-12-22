@@ -1,31 +1,41 @@
-<h1>Listing stories</h1>
+<h1 class="form_header">Listing stories</h1>
 
-<table>
+<table class="table">
   <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
+    <tr class="header">
+      <th></th>
+      <th>Assigned to</th>
+      <th>Story Title</th>
       <th>Status</th>
+      
       <th></th>
-      <th></th>
-      <th></th>
+      <th><%= button_to 'New Story', new_story_path, method: :get %></th>
     </tr>
   </thead>
-
+  <tfoot>
+        <tr>
+            <td colspan="6">
+                Number of stories = <%= @stories.length %>
+            </td>
+        </tr>
+  </tfoot>
   <tbody>
     <% @stories.each do |story| %>
       <tr>
-        <td><%= story.title %></td>
-        <td><%= story.description %></td>
-        <td><%= story.status %></td>
-        <td><%= link_to 'Show', story %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %></td>
-        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="td"></td>
+        <td class="td"><%= story.user.full_name if story.user != nil %></td>
+        <td class="td"><%= link_to "#{story.id} | #{story.title}", story %></td>
+        <td class="td"><%= story.status %></td>
+        
+        <td class="td"><%= link_to image_tag("Edit-icon.png"), edit_story_path(story) %></td>
+        <td class="td"><%= link_to image_tag("Delete_Icon.png"), story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
   </tbody>
+
 </table>
 
 <br>
 
-<%= link_to 'New Story', new_story_path %>
+

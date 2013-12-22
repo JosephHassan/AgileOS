@@ -1,6 +1,7 @@
-<h1>Editing story</h1>
+<%= button_to '<-- Back to list of stories', stories_path, method: :get %>
+<h1 class="form_header">Editing story</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @story %> |
-<%= link_to 'Back', stories_path %>
+
+

@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @story.title %>
-</p>
+    <p id="notice"><%= notice %></p>
+<%= button_to '<-- Back to list of stories', stories_path , :method => :get %>
+<article class="story">    
+    <p>
+      <strong class="form_header">#<%= @story.id%> - 
+        <%= @story.title %>
+      </strong>
+    </p>
+    
+    <aside class="story_stats">
+        Assigned to: <%= @story.user.full_name if @story.user != nil %><br />
+        Last update: <%= @story.updated_at%>
+    </aside>
 
-<p>
-  <strong>Description:</strong>
-  <%= @story.description %>
-</p>
+    <p>
+      <%= @story.description %>
+    </p>
+    
+    <p>
+      <strong>Status:</strong>
+      <%= @story.status %>
+    </p>
+</article>
+<%= button_to 'Edit', edit_story_path(@story) , :method => :get %>
 
-<p>
-  <strong>Status:</strong>
-  <%= @story.status %>
-</p>
-
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
