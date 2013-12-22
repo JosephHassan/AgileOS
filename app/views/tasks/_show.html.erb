@@ -1,0 +1,25 @@
+<table class="table">
+  <thead class="header">
+    <tr>
+      <th>Title</th>
+      <th>Assigned To</th>
+      <th>Due date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td class="td"><%= link_to "Task\##{task.id} - #{task.title}", task %></td>
+        <td class="td"><%= task.user.full_name if task.user != nil %></td>
+        <td class="td"><%= task.due_date %></td>
+        <td class="td"></td>
+        <td class="td"><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td class="td"><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

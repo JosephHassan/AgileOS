@@ -1,6 +1,8 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
+  #@tasks = Story.tasks.all
+  
   # GET /stories
   # GET /stories.json
   def index
@@ -10,6 +12,7 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
+    @tasks = @story.tasks.all
   end
 
   # GET /stories/new

@@ -24,3 +24,6 @@
 </article>
 <%= button_to 'Edit', edit_story_path(@story) , :method => :get %>
 
+<h1 class="form_header">Tasks related to this story</h1>
+
+<%= render "tasks/show"%>
