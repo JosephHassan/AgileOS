@@ -43,3 +43,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# For creating tables fast
+#gem "table_cloth"
+
+#adding page profiling capability
+gem 'rack-mini-profiler'
