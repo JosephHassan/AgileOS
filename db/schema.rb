@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224143309) do
+ActiveRecord::Schema.define(version: 20131224223626) do
 
   create_table "epics", force: true do |t|
     t.string   "title"
@@ -41,6 +41,18 @@ ActiveRecord::Schema.define(version: 20131224143309) do
   end
 
   add_index "releases", ["Product_id"], name: "index_releases_on_Product_id"
+
+  create_table "sprints", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "Release_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sprints", ["Release_id"], name: "index_sprints_on_Release_id"
 
   create_table "stories", force: true do |t|
     t.string   "title"

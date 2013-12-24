@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Release</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sprints.each do |sprint| %>
+      <tr>
+        <td><%= sprint.title %></td>
+        <td><%= sprint.description %></td>
+        <td><%= sprint.start_date %></td>
+        <td><%= sprint.end_date %></td>
+        <td><%= sprint.Release.title %></td>
+        <td><%= link_to 'Show', sprint %></td>
+        <td><%= link_to 'Edit', edit_sprint_path(sprint) %></td>
+        <td><%= link_to 'Destroy', sprint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

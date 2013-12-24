@@ -27,3 +27,6 @@
 
 <%= link_to 'Edit', edit_release_path(@release) %> |
 <%= link_to 'Back', releases_path %>
+
+<h2>List of Sprints in this Release</h2>
+<%= render 'sprints/list'%>

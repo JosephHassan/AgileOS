@@ -1,4 +1,6 @@
 AgileOS::Application.routes.draw do
+  resources :sprints
+
   resources :epics
 
   resources :releases

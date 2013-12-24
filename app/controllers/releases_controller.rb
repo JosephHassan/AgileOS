@@ -6,12 +6,14 @@ class ReleasesController < ApplicationController
   # GET /releases.json
   def index
     @releases = Release.order("title").page(params[:page]).per(5)
+    
   end
 
   # GET /releases/1
   # GET /releases/1.json
   def show
     clear_session_from_ids
+    @sprints = @release.sprints.order("title").page(params[:page]).per(5)
   end
 
   # GET /releases/new
