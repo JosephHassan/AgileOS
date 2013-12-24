@@ -1,4 +1,6 @@
 AgileOS::Application.routes.draw do
+  resources :epics
+
   resources :releases
 
   resources :products

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @epic.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @epic.description %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @epic.Product.title %>
+</p>
+
+<%= link_to 'Edit', edit_epic_path(@epic) %> |
+<%= link_to 'Back to list of Epics', epics_path %> | 
+<%= link_to 'Add a new story to this Epic', new_story_path(@epic) %>
+
+<h2 class="form_header">List of Stories Under this Epic</h2>
+
+<%= render 'stories/list'%>

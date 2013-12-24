@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224011349) do
+ActiveRecord::Schema.define(version: 20131224140508) do
+
+  create_table "epics", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "Product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "epics", ["Product_id"], name: "index_epics_on_Product_id"
 
   create_table "products", force: true do |t|
     t.string   "title"
@@ -40,6 +50,7 @@ ActiveRecord::Schema.define(version: 20131224011349) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "estimate"
+    t.integer  "epic_id"
   end
 
   create_table "tasks", force: true do |t|

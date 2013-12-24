@@ -32,7 +32,10 @@
           <%= f.label :estimate, "Story Size" %><br/>
           <%= f.select :estimate, Story::FIBONACCI_SEQUENCE, prompt: true%><br/>
       </div>
-      
+      <div class="field">
+          <%= f.label :epic_id %>
+          <%= f.text_field :epic_id %>
+      </div>
       <div class="actions">
         <%= f.submit %>
       </div>

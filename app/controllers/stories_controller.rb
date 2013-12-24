@@ -20,6 +20,7 @@ class StoriesController < ApplicationController
   # GET /stories/new
   def new
     @story = Story.new
+    @story.epic_id = session[:epic_id] if session[:epic_id] != nil
   end
 
   # GET /stories/1/edit
@@ -74,7 +75,7 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :description, :status, :user_id, :estimate)
+      params.require(:story).permit(:title, :description, :status, :user_id, :estimate, :epic_id)
     end
     
 

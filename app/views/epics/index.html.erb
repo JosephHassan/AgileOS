@@ -1,0 +1,31 @@
+<h1 class="form_header">Listing epics</h1>
+
+<table class="table">
+  <thead class="header">
+    <tr>
+      <th>Title</th>
+      <th>Number of Stories</th>
+      <th>Product</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @epics.each do |epic| %>
+      <tr>
+        <td class="td"><%= epic.title %></td>
+        <td class="td"><%= epic.stories.length %></td>
+        <td class="td"><%= epic.Product.title %></td>
+        <td class="td"><%= link_to 'Show', epic %></td>
+        <td class="td"><%= link_to 'Edit', edit_epic_path(epic) %></td>
+        <td class="td"><%= link_to 'Destroy', epic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Epic', new_epic_path %>

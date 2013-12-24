@@ -1,0 +1,36 @@
+<table class="table">
+  <thead>
+    <tr class="header">
+      
+      <th>Assigned to</th>
+      <th>Story Title</th>
+      <th>Status</th>
+      <th><abbr>Number 
+          of Tasks</abbr></th>
+      <th></th>
+      <th><%= button_to 'New Story', new_story_path, method: :get %></th>
+    </tr>
+  </thead>
+  <tfoot>
+        <tr>
+            <td colspan="6">
+                Number of stories = <%= @stories.length %>
+            </td>
+        </tr>
+  </tfoot>
+  <tbody>
+    <% @stories.each do |story| %>
+      <tr>
+        
+        <td class="td"><%= story.user.full_name if story.user != nil %></td>
+        <td class="td"><%= link_to "Story \##{story.id} - #{story.title}", story %></td>
+        <td class="td"><%= story.status %></td>
+        <td class="td"><%= story.tasks.length %></td>
+        <td class="td"><%= link_to image_tag("Edit-icon.png"), edit_story_path(story) %></td>
+        <td class="td"><%= link_to image_tag("Delete_Icon.png"), story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+
+</table>
