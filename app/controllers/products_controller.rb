@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    clear_session_from_ids
     @releases = @product.releases.all
     @epics = @product.epics.all
     session[:product_id] = @product.id

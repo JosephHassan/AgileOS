@@ -6,12 +6,13 @@ class EpicsController < ApplicationController
   # GET /epics.json
   def index
     @epics = Epic.all
-    #clear_session_from_ids
+    clear_session_from_ids
   end
 
   # GET /epics/1
   # GET /epics/1.json
   def show
+    clear_session_from_ids
     @stories = @epic.stories.all
     session[:epic_id] = @epic.id
     session[:product_id] = @epic.Product_id
@@ -20,6 +21,7 @@ class EpicsController < ApplicationController
   # GET /epics/new
   def new
     @epic = Epic.new
+    @epic.Product_id = session[:product_id]
   end
 
   # GET /epics/1/edit

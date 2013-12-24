@@ -1,6 +1,7 @@
 class ReleasesController < ApplicationController
   before_action :set_release, only: [:show, :edit, :update, :destroy]
-
+  include Session_helper
+  
   # GET /releases
   # GET /releases.json
   def index
@@ -10,6 +11,7 @@ class ReleasesController < ApplicationController
   # GET /releases/1
   # GET /releases/1.json
   def show
+    clear_session_from_ids
   end
 
   # GET /releases/new

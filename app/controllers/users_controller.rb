@@ -1,15 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  include Session_helper
+  
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    clear_session_from_ids
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    clear_session_from_ids
   end
 
   # GET /users/new

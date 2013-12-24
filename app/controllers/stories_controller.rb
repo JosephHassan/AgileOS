@@ -14,6 +14,7 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
+    clear_session_from_ids
     @tasks = @story.tasks.all
     session[:story_id] = @story.id
   end
@@ -77,7 +78,7 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :description, :status, :user_id, :estimate, :epic_id)
+      params.require(:story).permit(:title, :description, :status, :user_id, :estimate, :epic_id, :product_id)
     end
     
 
