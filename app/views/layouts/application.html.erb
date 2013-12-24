@@ -6,6 +6,13 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+<nav>
+    <%= link_to "Admin Portal", admin_portal_path %> | 
+    <%= link_to "Manage Users", users_path %> | 
+    <%= link_to "Manage Stories", stories_path %> | 
+    <%= link_to "Manage Products", products_path %> | 
+    <%= link_to "Manage Releases", releases_path %>
+</nav>
 <body>
 
 <%= yield %>

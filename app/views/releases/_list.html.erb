@@ -1,0 +1,29 @@
+<table class="table">
+  <thead class="header">
+    <tr>
+      <th>Title</th>
+      
+      <th>Target release date</th>
+      <th>Status</th>
+      <th>Product</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @releases.each do |release| %>
+      <tr>
+        <td class="td"><%= release.title %></td>
+        
+        <td class="td"><%= release.target_release_date %></td>
+        <td class="td"><%= release.status %></td>
+        <td class="td"><%= release.Product.title %></td>
+        <td class="td"><%= link_to 'Show', release %></td>
+        <td class="td"><%= link_to 'Edit', edit_release_path(release) %></td>
+        <td class="td"><%= link_to 'Destroy', release, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
