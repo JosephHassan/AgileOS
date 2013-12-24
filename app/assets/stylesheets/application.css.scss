@@ -11,8 +11,6 @@
  *= require_self
  *= require_tree .
  */
-
-
 $main-color: #EEE9E9;
 $main-color-shade-zero: lighten($main-color, 5%);
 $main-color-shade-one: darken($main-color, 75%);
@@ -34,6 +32,20 @@ $main-color-shade-three: darken($main-color, 25%);
     border: 2px solid $border-color;
 }
 
+.pagination {
+    background-color: complement($main-color);
+    font-size:        10pt;
+    color:            red;
+    @include rounded-border(complement($main-color-shade-three));
+    a{
+      color:          complement($main-color-shade-one);
+      text-decoration:      none;
+      &:active {
+        color: red;
+      }
+    }
+  }
+
 nav{
   display:  block;
   margin:   5px 15px 20px;
@@ -48,6 +60,7 @@ nav{
   a{
     color:  invert($main-color-shade-one);
   }
+  
 }
 
 h1{
@@ -94,30 +107,29 @@ table {
         @include cell-content;
         border:  0px;
     }
-      
-
 }
 
-.story_stats{
-    font-size:    larger;
-    font-style:   italic;
-    color:        complement($main-color-shade-two);
-    background-color: complement($main-color-shade-zero);
-    float:        right;
-    width:        25%;
-    padding-left: 5px;
-    border-left:  2px, black;
-    @include rounded-border($main-color);
-    
-    a{
+  .story_stats{
+      font-size:    larger;
+      font-style:   italic;
       color:        complement($main-color-shade-two);
-    }
-}
+      background-color: complement($main-color-shade-zero);
+      float:        right;
+      width:        25%;
+      padding-left: 5px;
+      border-left:  2px, black;
+      @include rounded-border($main-color);
+      
+      a{
+        color:        complement($main-color-shade-two);
+      }
+  }
+  
+  .story{
+      font:0.8em/1.2em Arial, Helvetica, Sans-Serif; 
+      padding: 2px;
+      background-color: $main-color-shade-zero;//#FFFFCC; 
+      @include rounded-border($main-color);
+      //color: black;      
+  }
 
-.story{
-    font:0.8em/1.2em Arial, Helvetica, Sans-Serif; 
-    padding: 2px;
-    background-color: $main-color-shade-zero;//#FFFFCC; 
-    @include rounded-border($main-color);
-    //color: black;      
-}

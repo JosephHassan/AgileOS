@@ -25,7 +25,12 @@ en:
     formats:
       default: "%d %b %Y, %H:%M"
       date_only: "%d-%b-%Y"
-
+  views:
+    pagination:
+      previous: "&lt; Previous"
+      next: "Next &gt;"
+      truncate: "..."
+      
 date:
   formats:
     default: "%d-%b-%Y"

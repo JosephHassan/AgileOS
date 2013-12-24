@@ -49,3 +49,6 @@ end
 
 #adding page profiling capability
 gem 'rack-mini-profiler'
+
+#pagination
+gem 'kaminari'

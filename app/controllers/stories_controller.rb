@@ -7,8 +7,11 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
     clear_session_from_ids
+    
+    #get 5 records per page
+    @stories = Story.order("title").page(params[:page]).per(5)
+    
   end
 
   # GET /stories/1
