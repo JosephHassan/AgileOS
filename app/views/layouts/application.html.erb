@@ -14,7 +14,7 @@
     <%= link_to "Manage Releases", releases_path %> | 
     <%= link_to "Manage Epics", epics_path %>
 </nav>
-<body>
+<body id="<%= params[:controller].parameterize %>_controller">
 
 <%= yield %>
 
