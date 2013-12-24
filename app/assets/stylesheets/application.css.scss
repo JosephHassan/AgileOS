@@ -63,7 +63,7 @@ nav{
   
 }
 
-h1{
+h1, h2{
     background-color: $main-color;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -84,7 +84,6 @@ field{
 table {
     width:90%;
     border-top:1px solid #e5eff8;
-    border-right:1px solid #e5eff8;
     margin:1em auto;
     border-collapse:collapse;
   
