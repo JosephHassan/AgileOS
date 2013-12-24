@@ -1,13 +1,14 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
-
+  include Session_helper
+  
   #@tasks = Story.tasks.all
   
   # GET /stories
   # GET /stories.json
   def index
     @stories = Story.all
-    session[:story_id] = nil
+    clear_session_from_ids
   end
 
   # GET /stories/1
@@ -21,6 +22,7 @@ class StoriesController < ApplicationController
   def new
     @story = Story.new
     @story.epic_id = session[:epic_id] if session[:epic_id] != nil
+    @story.product_id = session[:product_id] if session[:product_id] != nil
   end
 
   # GET /stories/1/edit

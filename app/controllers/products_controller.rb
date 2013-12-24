@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  include Session_helper
+  
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+    clear_session_from_ids
   end
 
   # GET /products/1

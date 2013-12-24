@@ -6,6 +6,9 @@
     </p>
     
     <aside class="story_stats">
+        <% if @story.epic != nil %>
+            Epic: <%= link_to @story.epic.title, epic_path(@story.epic)%><br />
+        <% end %>
         Story Size: <%= @story.estimate %><br />
         Assigned to: <%= @story.user.full_name if @story.user != nil %><br />
         Last update: <%= @story.updated_at%>

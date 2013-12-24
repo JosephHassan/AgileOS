@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224140508) do
+ActiveRecord::Schema.define(version: 20131224143309) do
 
   create_table "epics", force: true do |t|
     t.string   "title"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20131224140508) do
     t.integer  "user_id"
     t.integer  "estimate"
     t.integer  "epic_id"
+    t.integer  "product_id"
   end
 
   create_table "tasks", force: true do |t|

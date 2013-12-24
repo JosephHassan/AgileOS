@@ -2,6 +2,7 @@ class Story < ActiveRecord::Base
   has_many :tasks, dependent: :destroy
   belongs_to :user
   belongs_to :epic
+  belongs_to :product
   
   validates :title, presence: true
   validates :description, presence: true

@@ -1,11 +1,12 @@
 class EpicsController < ApplicationController
   before_action :set_epic, only: [:show, :edit, :update, :destroy]
-
+  include Session_helper
+  
   # GET /epics
   # GET /epics.json
   def index
     @epics = Epic.all
-    session[:epic_id] = nil
+    clear_session_from_ids
   end
 
   # GET /epics/1
@@ -13,6 +14,7 @@ class EpicsController < ApplicationController
   def show
     @stories = @epic.stories.all
     session[:epic_id] = @epic.id
+    session[:product_id] = @epic.Product_id
   end
 
   # GET /epics/new
