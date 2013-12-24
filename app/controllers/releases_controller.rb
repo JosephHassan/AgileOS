@@ -15,6 +15,7 @@ class ReleasesController < ApplicationController
   # GET /releases/new
   def new
     @release = Release.new
+    @release.Product_id = session[:product_id]
   end
 
   # GET /releases/1/edit

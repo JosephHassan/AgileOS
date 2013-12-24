@@ -5,7 +5,7 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th></th>
+      <th>Number of Releases</th>
       <th></th>
       <th></th>
     </tr>
@@ -14,11 +14,11 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td class="td"><%= product.title %></td>
+        <td class="td"><%= link_to product.title, product %></td>
         <td class="td"><%= product.description %></td>
-        <td class="td"><%= link_to 'Show', product %></td>
-        <td class="td"><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td class="td"><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="td"><%= product.releases.length %></td>
+        <td class="td"><%= link_to image_tag('Edit-icon.png'), edit_product_path(product) %></td>
+        <td class="td"><%= link_to image_tag('Delete_Icon.png'), product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

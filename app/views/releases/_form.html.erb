@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.select :status, Release::RELEASE_STATUS, prompt: true %>
   </div>
   <div class="field">
     <%= f.label :Product_id %><br>
-    <%= f.text_field :Product_id %>
+    <%= f.hidden_field :Product_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
