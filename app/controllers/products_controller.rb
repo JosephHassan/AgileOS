@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @releases = @product.releases.all
+    @epics = @product.epics.all
     session[:product_id] = @product.id
   end
 

@@ -6,7 +6,7 @@ class EpicsController < ApplicationController
   # GET /epics.json
   def index
     @epics = Epic.all
-    clear_session_from_ids
+    #clear_session_from_ids
   end
 
   # GET /epics/1
