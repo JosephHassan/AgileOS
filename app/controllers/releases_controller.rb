@@ -5,7 +5,7 @@ class ReleasesController < ApplicationController
   # GET /releases
   # GET /releases.json
   def index
-    @releases = Release.all
+    @releases = Release.order("title").page(params[:page]).per(5)
   end
 
   # GET /releases/1
