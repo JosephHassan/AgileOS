@@ -19,6 +19,24 @@ $main-color-shade-three: darken($main-color, 25%);
     border: 2px solid $border-color;
 }
 
+body {
+  margin:       0;
+  padding:      0;
+  font-family:  $verdana;
+  font-size:    12px;
+}
+
+header{
+  @include linear-gradient(#777, #444);
+  color:          white;
+  padding:        10px;
+  font-family:    $lucida-grande;
+  font-style:     strong;
+  font-size:      30pt;
+  font-weight:    bold;
+  @include box-shadow(0 0 6px 3px black);
+}
+
 .pagination {
     background-color: complement($main-color);
     font-size:        10pt;

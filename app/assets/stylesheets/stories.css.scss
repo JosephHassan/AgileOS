@@ -1,23 +1,23 @@
-story_stats{
-      font-size:    larger;
-      font-style:   italic;
-      color:        complement($main-color-shade-two);
-      background-color: complement($main-color-shade-zero);
-      float:        right;
-      width:        25%;
-      padding-left: 5px;
-      border-left:  2px, black;
-      @include rounded-border($main-color);
-      
-      a{
-        color:        complement($main-color-shade-two);
-      }
-  }
-  
-story{
-      font:0.8em/1.2em Arial, Helvetica, Sans-Serif; 
+.story{
+      //font:0.8em/1.2em Arial, Helvetica, Sans-Serif; 
+      font-family: $lucida-grande;
       padding: 2px;
+      position: relative;
       background-color: $main-color-shade-zero;//#FFFFCC; 
       @include rounded-border($main-color);
       //color: black;      
+      aside{
+          font-style:   italic;
+          color:        complement($main-color-shade-two);
+          background-color: complement($main-color-shade-zero);
+          float:        right;
+          width:        25%;
+          padding-left: 5px;
+          border-left:  2px, black;
+          @include rounded-border($main-color);
+          
+          a{
+            color:        complement($main-color-shade-two);
+          }
+        }
   }
