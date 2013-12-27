@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-AgileOS::Application.config.secret_key_base = '755c93ee4cf37453b1ccacedaaea2d05f4fbe254251ccf84f28eee92c659779759bf38303d1a07d347b68683f857b346d53bb19a837008ee2435bfe02decbb1f'
+AgileOS::Application.config.secret_key_base = 'e8338f449b699ac8117d138ad79c88bdd34d90ddf8ed84f17081ef01eb6d2e8fbc98a3657dc9e3ad43dea02162a898796cac19848be77b46f92cc053881449eb'

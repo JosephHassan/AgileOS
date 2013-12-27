@@ -52,3 +52,6 @@ gem 'rack-mini-profiler'
 
 #pagination
 gem 'kaminari'
+
+#better SCSS
+gem 'bourbon'
