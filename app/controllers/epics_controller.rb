@@ -13,7 +13,7 @@ class EpicsController < ApplicationController
   # GET /epics/1.json
   def show
     clear_session_from_ids
-    @stories = @epic.stories.all
+    @stories = @epic.stories.order("title").page(params[:page]).per(5)
     session[:epic_id] = @epic.id
     session[:product_id] = @epic.Product_id
   end
