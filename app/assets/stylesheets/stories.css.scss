@@ -6,6 +6,9 @@
       background-color: $main-color-shade-zero;//#FFFFCC; 
       @include rounded-border($main-color);
       //color: black;      
+      margin:       20px;
+      position:     relative;
+      
       aside{
           font-style:   italic;
           color:        complement($main-color-shade-two);
@@ -18,6 +21,9 @@
           
           a{
             color:        complement($main-color-shade-two);
+            position:     relative;
           }
         }
+        
   }
+  
