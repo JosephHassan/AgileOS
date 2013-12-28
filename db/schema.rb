@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224223626) do
+ActiveRecord::Schema.define(version: 20131228012705) do
 
   create_table "epics", force: true do |t|
     t.string   "title"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20131224223626) do
     t.integer  "estimate"
     t.integer  "epic_id"
     t.integer  "product_id"
+    t.integer  "sprint_id"
   end
 
   create_table "tasks", force: true do |t|
