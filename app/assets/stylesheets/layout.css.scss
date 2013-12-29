@@ -32,7 +32,7 @@ form {
 }
 
 header{
-  @include linear-gradient(right, #777, #444);
+  @include linear-gradient(top, #777777, #2a2a2a);
   color:          white;
   padding:        10px;
   font-family:    $lucida-grande;
@@ -46,7 +46,7 @@ header{
     background-color: complement($main-color);
     font-size:        10pt;
     color:            red;
-    @include rounded-border(complement($main-color-shade-three));
+    @include linear-gradient(right, complement($main-color-shade-zero), complement($main-color-shade-two));//rounded-border(complement($main-color-shade-three));
     a{
       color:          complement($main-color-shade-one);
       text-decoration:      none;
@@ -61,7 +61,7 @@ nav{
   margin:   3px 0px 20px;
   position: relative;
   //@include rounded-border(complement($main-color-shade-one));
-  align:  center;
+  align:  right;
   color:  complement($main-color-shade-zero);
   //background-color: complement($main-color-shade-two);
   @include linear-gradient(right, complement($main-color-shade-zero), complement($main-color-shade-two));
@@ -79,7 +79,7 @@ h1, h2{
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
-    color: $main-color-shade-one;
+    @include linear-gradient(left, $main-color-shade-three, $main-color-shade-zero);
     text-shadow: $main-color-shade-two 2px 2px 2px, $main-color-shade-three 3px 3px 3px;; 
     width:auto;
 }
