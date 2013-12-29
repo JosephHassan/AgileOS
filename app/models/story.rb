@@ -3,6 +3,7 @@ class Story < ActiveRecord::Base
   belongs_to :user
   belongs_to :epic
   belongs_to :product
+  belongs_to :sprint
   
   validates :title, presence: true
   validates :description, presence: true
