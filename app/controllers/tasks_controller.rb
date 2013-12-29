@@ -13,6 +13,7 @@ class TasksController < ApplicationController
   # GET /tasks/1.json
   def show
     clear_session_from_ids
+    session[:story_id] = @task.story_id
     @story = @task.story
   end
 
@@ -67,7 +68,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to story_path(@task.story), notice: 'Task was deleted successfully.' }
+      format.html { redirect_to story_path(get_story_id), notice: 'Task was deleted successfully.' }
       format.json { head :no_content }
     end
   end

@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+task_one:
   title: MyString
   description: MyText
-  due_date: 
+  due_date:
+  status: New
+  story_id: story_one
 
-two:
+task_two:
   title: MyString
   description: MyText
-  due_date: 
+  due_date:
+  status: New
+  story_id: story_two

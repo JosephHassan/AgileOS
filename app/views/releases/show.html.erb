@@ -22,7 +22,12 @@
 
 <p>
   <strong>Product:</strong>
-  <%= @release.Product.title %>
+  <%=   begin
+            @release.Product.title
+        rescue => e
+            logger.error e.message
+        end
+  %>
 </p>
 
 <%= link_to 'Edit', edit_release_path(@release) %> |

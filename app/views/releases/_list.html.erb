@@ -19,7 +19,12 @@
         
         <td class="td"><%= release.target_release_date %></td>
         <td class="td"><%= release.status %></td>
-        <td class="td"><%= release.Product.title %></td>
+        <td class="td"><%= begin
+                                release.Product.title if release.product_id
+                            rescue => e
+                                logger.error e.message
+                            end
+                        %></td>
         <td class="td"><%= link_to 'Show', release %></td>
         <td class="td"><%= link_to 'Edit', edit_release_path(release) %></td>
         <td class="td"><%= link_to 'Destroy', release, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -14,8 +14,13 @@
   <%= @task.due_date %>
 </p>
 
+<p>
+  <strong>Story ID:</strong>
+  <%= @task.story_id %>
+</p>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back to story', story_path(@task.story) %>
+<%= link_to 'Back to story', story_path(@task.story_id) %>
 
 <h2 class="form_header"> This task belongs to the following story </h2>
 <hr />

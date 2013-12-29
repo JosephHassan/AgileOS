@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+epic_one:
   title: MyString
   description: MyText
   Product_id: 
 
-two:
+epic_two:
   title: MyString
   description: MyText
   Product_id: 

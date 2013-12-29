@@ -2,7 +2,7 @@ require 'test_helper'
 
 class EpicsControllerTest < ActionController::TestCase
   setup do
-    @epic = epics(:one)
+    @epic = epics(:epic_one)
   end
 
   test "should get index" do
