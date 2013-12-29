@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
+release_one:
+  title: MyRelease
+  description: My Release Description
   target_release_date: 2013-12-23 17:13:49
-  status: MyString
+  status: In planning
   Product_id: 
 
-two:
+release_two:
   title: MyString
   description: MyText
   target_release_date: 2013-12-23 17:13:49

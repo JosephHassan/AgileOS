@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SprintsControllerTest < ActionController::TestCase
   setup do
-    @sprint = sprints(:one)
+    @sprint = sprints(:sprint_one)
   end
 
   test "should get index" do

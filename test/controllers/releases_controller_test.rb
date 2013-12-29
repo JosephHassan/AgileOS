@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ReleasesControllerTest < ActionController::TestCase
   setup do
-    @release = releases(:one)
+    @release = releases(:release_one)
   end
 
   test "should get index" do

@@ -22,7 +22,12 @@
 
 <p>
   <strong>Release:</strong>
-  <%= @sprint.Release.title %>
+  <%= begin
+        @sprint.Release.title if @sprint.Release_id
+      rescue => e
+        logger.error e.message
+      end
+  %>
 </p>
 
 <%= link_to 'Edit', edit_sprint_path(@sprint) %> |
