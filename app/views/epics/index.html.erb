@@ -17,7 +17,12 @@
       <tr>
         <td><%= link_to epic.title, epic %></td>
         <td ><%= epic.stories.length %></td>
-        <td ><%= epic.Product.title %></td>
+        <td ><%= begin
+                   epic.Product.title if epic.Product_id
+                 rescue => e
+                    logger.error e.message
+                 end
+             %></td>
         <td ><%= link_to 'Edit', edit_epic_path(epic) %></td>
         <td ><%= link_to 'Destroy', epic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

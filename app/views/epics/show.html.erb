@@ -12,7 +12,12 @@
 
 <p>
   <strong>Product:</strong>
-  <%= @epic.Product.title %>
+  <%=   begin
+            @epic.Product.title
+        rescue => e
+            logger.error e.message
+        end
+  %>
 </p>
 
 <%= link_to 'Edit', edit_epic_path(@epic) %> |
