@@ -54,6 +54,9 @@ class SprintsController < ApplicationController
   # DELETE /sprints/1
   # DELETE /sprints/1.json
   def destroy
+    #TODO Remove all assigned Stories
+    Story.where(:sprint_id => @sprint.id).update_all(:sprint_id => nil)
+
     @sprint.destroy
     respond_to do |format|
       format.html { redirect_to sprints_url }
