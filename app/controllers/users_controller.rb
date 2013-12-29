@@ -57,6 +57,10 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    # remove story and task assignments but don't delete the records
+    Story.where(:user_id => @user.id).update_all(:user_id => nil)
+    Task.where(:user_id => @user.id).update_all(:user_id => nil)
+
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url }
@@ -74,4 +78,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :password, :first_name, :last_name, :email)
     end
+
+
 end
