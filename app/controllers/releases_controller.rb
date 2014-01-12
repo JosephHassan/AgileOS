@@ -1,5 +1,6 @@
 class ReleasesController < ApplicationController
   before_action :set_release, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:new]
   include Session_helper
   
   # GET /releases
@@ -64,6 +65,11 @@ class ReleasesController < ApplicationController
       format.html { redirect_to releases_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def set_product
+     @product = Product.find_by(id: session[:product_id])
   end
 
   private
