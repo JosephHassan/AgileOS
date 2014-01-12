@@ -4,4 +4,9 @@ class Task < ActiveRecord::Base
   
   validates :title, presence: true
   STATUS = ["New", "In Progress", "Done"]
+
+  scope :new, -> {where(status: "New")}
+  scope :in_progress, -> {where(status: "In Progress")}
+  scope :open_tasks, -> {where(status: ["New", "In Progress"])}
+  scope :completed, -> {where(status: "Done")}
 end
