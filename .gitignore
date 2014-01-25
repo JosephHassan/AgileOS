@@ -24,3 +24,5 @@
 .idea/AgileOS.iml
 
 .idea/workspace.xml
+
+.idea/runConfigurations/spec__AgileOS.xml
